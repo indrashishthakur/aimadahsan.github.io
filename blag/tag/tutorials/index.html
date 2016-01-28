@@ -53,8 +53,74 @@
 
     <div class='row-fluid''>
         <div class="article-title span9">
-            <a href="../../post/2016/01/pelican-url/"><h1>Generating clean URLs in Pelican</h1></a>
+            <a href="../../post/2016/01/atom-py/"><h1>Configuring Atom for Python development</h1></a>
         </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span2">
+<p>Thu 28 January 2016 </p>
+
+<p style="text-align: left;">
+Filed under <a href="../../category/tutorials">Tutorials</a>
+</p>
+<p style="text-align: left;">
+ 
+    Tags <a href="../../tag/tutorials/">tutorials</a> <a href="../../tag/atom/">atom</a> <a href="../../tag/github/">github</a> </p>
+<p>
+</p>
+      </div>
+      <div class="article-content span8">
+	<p>Yesterday, out of nowhere, a thought popped up into my head and I migrated from <a href="https://www.sublimetext.com/3">Sublime Text 3</a> to <a href="https://atom.io/">Atom by GitHub</a>. I happened to play around with Atom for a little while and I have some customizations to share that can make your life easier when working in Python.</p>
+<h3>Why Atom?</h3>
+<p>Atom is hackable to the core, open-source and most importantly free. It is built on web technologies. Atom is very customizable with the help of various plug-ins available. Out of the box, it comes with some basic plug-ins to make your life easier.</p>
+<h3>How to install plug-ins and themes?</h3>
+<p>All of the packages from the community can be found <a href="https://atom.io/packages">here</a>. To install, you can use Install tab in settings page. Open settings view (Ctrl + ,) and click on "Install" tab on the left. Search the package name and once results are displayed, click the "Install" button for the desired package and hang on tight.</p>
+<p>The process to installing a theme is same as that of package but before searching for a theme, make sure to press the "Theme" toggle on right of the search bar.</p>
+<h3>Command Line package management</h3>
+<p>If you'd like to install/manage packages from the command line, Atom provides you option to do that through <code>apm</code> (Atom Package Manager). You can read more about it <a href="https://atom.io/docs/v1.2.4/using-atom-atom-packages#command-line">here</a>.</p>
+<h3>Packages and Configurations</h3>
+<h5>1. Use spaces instead of tabs</h5>
+<p>PEP8 styling guide recommends spaces for indentation instead of tabs. You can configure for this by going into Settings menu and scrolling to 'Soft Tabs' and checking it. You should also scroll down and select 'Tab Length' as 4 if it isn't already set so.</p>
+<h5>2. Linter for Python</h5>
+<p>A linter is a small program that checks code for stylistic or programming errors. To enable linting support for Python, install <a href="https://atom.io/packages/linter-flake8">linter-flake8</a> plug-in.</p>
+<p>linter-flake8 requires flake8 package to be installed on your system. To do that, you can type in and execute the following command:</p>
+<p><code>pip install flake8</code></p>
+<h5>3. Open recent files/folders</h5>
+<p>Install the <a href="https://atom.io/packages/open-recent">open-recent</a> package to enable option to open recent files and folders.</p>
+<h5>4. Minimap</h5>
+<p><a href="https://atom.io/packages/minimap">Minimap</a>
+is one of the most downloaded plug-ins on Atom. It allows you to have a full preview of your source code like Sublime Text.</p>
+<h5>5. Highlight selected words</h5>
+<p>You can highlight a word throughout the file when you double click it with <a href="https://atom.io/packages/highlight-selected">highlight-selected</a> package.</p>
+<h5>6. Get terminal inside Atom</h5>
+<p><a href="https://atom.io/packages/terminal-plus">terminal-plus</a> package allows you to get a Terminal window right inside your text editor.</p>
+<h5>7. Add ignored files</h5>
+<p>It can get annoying to have <code>.pyc</code> files show up in the sidebar along with your project files. Just go to 'Settings' page and scroll down to 'Ignored Names' and add <code>*.pyc</code> and the files won't annoy you any longer. You can also add other files to be ignored such as <code>.db</code> etc. or directories such as virtualenv.</p>
+<h5>8. Enhance the looks of your editor</h5>
+<p>There are lots of themes to customize the way Atom looks. I use <a href="https://atom.io/themes/seti-ui">seti-ui</a> and <a href="https://atom.io/themes/seti-syntax">seti-syntax</a> which provides a beautiful dark layout for editing (Screenshots available on the package page).</p>
+<p>To use Seti, install the themes, then go to 'Settings' page and click on 'Themes' tab on left side and select 'UI Theme' and 'Syntax Theme' as 'Seti'.</p>
+<p>You can also browse for more themes <a href="https://atom.io/themes">here</a> and pick the one that suits you.</p>
+<h3>References</h3>
+<p>[1] <a href="http://www.marinamele.com/install-and-configure-atom-editor-for-python">http://www.marinamele.com/install-and-configure-atom-editor-for-python</a></p>
+<p>[2] <a href="https://discuss.atom.io/t/a-way-to-hide-the-ds-store-files-in-the-tree-view/1431">https://discuss.atom.io/t/a-way-to-hide-the-ds-store-files-in-the-tree-view/1431</a></p>
+<p>[3] <a href="https://atom.io/docs/v1.2.4/using-atom-atom-packages">https://atom.io/docs/v1.2.4/using-atom-atom-packages</a></p> 
+	<a class="btn btn-mini xsmall" href="../../post/2016/01/atom-py/">
+          <i class="icon-comment"></i> Comment </a>
+	<hr />
+      </div>
+      
+    </div>
+    
+
+ 
+        
+
+
+
+    <div class='row-fluid'>
+      <div class='article-title span9'> 
+        <a href="../../post/2016/01/pelican-url/"><h1>Generating clean URLs in Pelican</h1></a>
+      </div>
     </div>
     <div class="row-fluid">
       <div class="span2">
@@ -69,84 +135,15 @@ Filed under <a href="../../category/tutorials">Tutorials</a>
 <p>
 </p>
       </div>
-      <div class="article-content span8">
-	<p>Around last week, I started working on this blog and while most of the things were easy to <a href="http://docs.getpelican.com/en/3.6.3/quickstart.html">setup</a>, there is one thing that got me stumped for a while and I figured I should share how I worked my way around it. So, in this small tutorial, I'm going to share <strong>how to generate clean URLs on your Pelican blog</strong>.</p>
-<p>By default, the path to the URLs generated by Pelican for your posts are of the form: </p>
-<div class="highlight"><pre>./{slug}.html
-</pre></div>
-
-
-<p>This means that your URL to some post might look something of sort:</p>
-<div class="highlight"><pre>http://domain.com/my-post-slug-here.html
-</pre></div>
-
-
-<p>Now, on the address bar it looks quite ugly. For the sake of asthetic apperance of your URLs, you can change this with just few lines. Let me show you how.</p>
-<p>Go to <code>pelicanconf.py</code> file and add the following two lines to it:</p>
-<div class="highlight"><pre>ARTICLE_URL = &quot;post/{date:%Y}/{date:%m}/{slug}/&quot;
-ARTICLE_SAVE_AS = &quot;post/{date:%Y}/{date:%m}/{slug}/index.html&quot;
-</pre></div>
-
-
-<p>If you generate your blog now, the path will be generated as follows:</p>
-<div class="highlight"><pre>./post/*year-here*/*month-here*/*slug-here*
-</pre></div>
-
-
-<p>Note that this is just how I have my URLs customised. You can always change it to suit your needs. For customizing the date and month or to add other fields, you can refer to the table <a href="https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior">here</a>.</p>
-<p>This customization is only for the article. We can also clean up URLs for pages, authors, tags and categories by customizing the following variables: </p>
-<div class="highlight"><pre>CATEGORY_URL = &quot;&quot;
-CATEGORY_SAVE_AS = &quot;&quot;
-
-TAG_URL = &quot;&quot;
-TAG_SAVE_AS = &quot;&quot;
-
-AUTHOR_URL = &quot;&quot;
-AUTHOR_SAVE_AS = &quot;&quot;
-
-PAGE_URL = &quot;&quot;
-PAGE_SAVE_AS = &quot;&quot;
-</pre></div>
-
-
-<p>You can also customize URLs to your archives too by editing the following variables:</p>
-<div class="highlight"><pre>YEAR_ARCHIVE_SAVE_AS = &#39;&#39;
-MONTH_ARCHIVE_SAVE_AS = &#39;&#39;
-DAY_ARCHIVE_SAVE_AS = &#39;&#39;
-</pre></div>
-
-
-<p>I don't feel that there is really need to explain much because the variable names speaks for themselves. You can also browse the full reference <a href="http://docs.getpelican.com/en/3.6.3/settings.html">here</a>.</p>
-<p>If you're lazy and like how URLs are generated on this blog, you are free to copy my configuration for the URL cleanup. Just copy the following code and append it to your <code>pelicanconf.py</code>:</p>
-<div class="highlight"><pre># Formatting to obtain clean URLs
-ARTICLE_URL = &quot;post/{date:%Y}/{date:%m}/{slug}/&quot;
-ARTICLE_SAVE_AS = &quot;post/{date:%Y}/{date:%m}/{slug}/index.html&quot;
-
-CATEGORY_URL = &quot;category/{slug}/&quot;
-CATEGORY_SAVE_AS = &quot;category/{slug}/index.html&quot;
-
-TAG_URL = &quot;tag/{slug}/&quot;
-TAG_SAVE_AS = &quot;tag/{slug}/index.html&quot;
-
-AUTHOR_URL = &#39;author/{slug}/&#39;
-AUTHOR_SAVE_AS = &#39;author/{slug}/index.html&#39;
-
-PAGE_URL = &#39;page/{slug}/&#39;
-PAGE_SAVE_AS = &#39;page/{slug}/index.html&#39;
-
-# Formatting for yearly archives
-YEAR_ARCHIVE_SAVE_AS = &#39;archive/{date:%Y}/index.html&#39;
-</pre></div>
-
-
-<p>I hope you found my post helpful in some way. If you have some questions and suggestions, comment below and I'll try to answer it as soon as possible. You can also contact me via e-mail or any other social media (check out About page for links).</p> 
+      <div class="summary span8">
+	<p>Around last week, I started working on this blog and while most of the things were easy to <a href="http://docs.getpelican.com/en/3.6.3/quickstart.html">setup</a>, there is one thing that got me stumped for a while and I figured I should share how I worked my way around it. So, in this small tutorial, I'm ...</p> 
 	<a class="btn btn-mini xsmall" href="../../post/2016/01/pelican-url/">
-          <i class="icon-comment"></i> Comment </a>
+          <i class="icon-plus-sign"></i> Read More </a>
 	<hr />
       </div>
       
     </div>
-    
+      
 <div class="pagination">
 <ul>
     <li class="prev disabled"><a href="#">&larr; Previous</a></li>
