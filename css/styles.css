@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900,300);
+
+body{
+    background-color: #cddc39;
+    transition: background-color 5s ease-in-out;
+}
+
+.big-fat-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    font-size: 80px;
+    color: white;
+}
+
+.blink {
+    webkit-animation: 1s blink step-end infinite;
+    -moz-animation: 1s blink step-end infinite;
+    -ms-animation: 1s blink step-end infinite;
+    -o-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: white;
+  }
+  50% {
+    color: transparent;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: white;
+  }
+  50% {
+    color: transparent;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: white;
+  }
+  50% {
+    color: transparent;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: white;
+  }
+  50% {
+    color: transparent;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: white;
+  }
+  50% {
+    color: transparent;
+  }
+}
+
+.center {
+    left: 0;
+    margin-top: -100px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.title-container {
+    display : inline-block;
+}
+
+.title-underline {
+    width: 0%;
+    height: 3px;
+    background: #ffffff;
+    transition: width 1s;
+    float: right;
+}

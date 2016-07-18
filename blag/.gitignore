@@ -1,2 +1,2 @@
-#Authorized personnel only
-pelican
+#Authorized personnel only (the directory where posts are generated)
+pelican/ 
