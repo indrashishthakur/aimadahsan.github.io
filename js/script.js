@@ -1,16 +1,43 @@
 $(document).ready(function(){
-    setTimeout(function(){
-        type('#typed', 'AIMAD AHSAN', 60);
+    setTimeout(function() {
+        $("#lp-cursor").removeClass("blink");
+        typingEffect('#typed', 'AIMAD AHSAN', 40);
+        $("#lp-cursor").addClass("blink");
     }, 3000);
 
-    setTimeout(function(){
-        $(".cursor").removeClass("blink").html("");
+    setTimeout(function() {
+        $("#lp-cursor").removeClass("blink").html("");
         $(".title-underline").css('width', "100%");
     }, 7000);
 
     setInterval(function() {
-        $("body").css("background-color", bg_colors[randInt(0, bg_colors.length)]);
+        $("#landing-section").css("background-color", bg_colors[randInt(0, bg_colors.length)]);
     }, 10000);
+
+    var aboutDisplayed = false;
+
+    $(window).scroll(function() {
+        var hT = $('#about').offset().top,
+        hH = $('#about').outerHeight(),
+        wH = $(window).height(),
+        wS = $(this).scrollTop();
+        if (wS >= (hT+hH-wH) && !aboutDisplayed){
+            aboutDisplayed = true;
+            typingEffect('#typed-name', 'Aimad Ahsan <br>', 40);
+            var tc = 0;
+            about.forEach(function(el, index, array){
+                if(index > 0)
+                    tc += array[index-1].length;
+                setTimeout(function(){
+                    typingEffect('#typed-erased', el, 40);
+                    setTimeout(function(){
+                        if(index < about.length - 1)
+                            erasingEffect('#typed-erased', 40);
+                    }, el.length * 40 + 3000);
+                }, (tc * 2 * 40) + (3000 * index) + 2000 * (index+1));
+            });
+        }
+    });
 });
 
 bg_colors = [
@@ -20,6 +47,19 @@ bg_colors = [
     "#4caf50", "#8bc34a", "#cddc39",
     "#ffeb3b", "#ffc107", "#ff9800",
     "#ff5722", "#795548", "#616161"
+];
+
+about = [
+    "is a student",
+    "is a Python programmer",
+    "is a JavaScript programmer",
+    "likes to read",
+    "enjoys listening to music",
+    "likes making websites",
+    "loves open-source",
+    "is passionate about learning new technologies",
+    "loves to binge-watch TV shows",
+    "loves the Internet."
 ];
 
 //
@@ -32,34 +72,45 @@ bg_colors = [
    which is the text to be displayed, additionally delay between successive
    characters can be specified too.
 */
-function type(nodeSelector, text, delay = 60){
-    $(nodeSelector).text(
-        text.slice(0, $(nodeSelector).text().length + 1)
-    );
-    if($(nodeSelector).text().length < text.length)
-        setTimeout(function(){
-            type(nodeSelector, text, delay);
-        }, delay);
+function typingEffect(nodeSelector, text, delay) {
+    var i = 0;
+
+    function type() {
+        if (text[i] === '<') {
+            $(nodeSelector).html($(nodeSelector).html() + '<br>');
+            i += 4;
+        } else {
+            $(nodeSelector).html($(nodeSelector).html() + text[i]);
+            i++;
+        }
+        if (i < text.length)
+            setTimeout(function() {
+                type();
+            }, delay);
+    }
+
+    type();
 }
 
 /*
    Erasing text effect for a node, requires nodeSelector which is a
-   CSS style selector for node which should display the text. Additionally,
-   delay between successive characters can be specified too.
+   CSS style selector for node which should display the text. The complete
+   text within the note will be erased. Additionally, delay between successive
+   character erasing can be specified too.
 */
-function erase(nodeSelector, delay = 60){
-    $(nodeSelector).text(
+function erasingEffect(nodeSelector, delay) {
+    $(nodeSelector).html(
         $(nodeSelector).text().slice(0, -1)
     );
-    if($(nodeSelector).text().length > 0)
-        setTimeout(function(){
-            erase(nodeSelector, delay);
+    if ($(nodeSelector).text().length > 0)
+        setTimeout(function() {
+            erasingEffect(nodeSelector, delay);
         }, delay);
 }
 
 /*
    Returns a random integer between min and max
 */
-function randInt(min, max){
-    return Math.floor(Math.random() * (max-min) + min);
+function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
 }
