@@ -21,7 +21,7 @@ $(document).ready(function(){
         hH = $('#about').outerHeight(),
         wH = $(window).height(),
         wS = $(this).scrollTop();
-        if (wS >= (hT+hH-wH) && !aboutDisplayed){
+        if (wS >= wH/2 && !aboutDisplayed){
             aboutDisplayed = true;
             typingEffect('#typed-name', 'Aimad Ahsan <br>', 40);
             var tc = 0;
